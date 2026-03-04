@@ -1,0 +1,11 @@
+services:
+  wedzarnia-hub:
+    build:
+      context: .
+      args:
+        VITE_SUPABASE_URL: ${VITE_SUPABASE_URL}
+        VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY}
+    container_name: wedzarnia-hub
+    restart: unless-stopped
+    ports:
+      - "3334:80"
